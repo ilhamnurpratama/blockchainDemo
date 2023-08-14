@@ -1,0 +1,27 @@
+/** 
+model.cto 
+Version 0.1.1
+Last Update 14-08-2023
+*/
+namespace org.tsel.network
+
+asset Ledger identified by callId {
+  o String callId
+  o String aNumber
+  o String bNumber
+  o String aMin
+  o String bMin
+  o String aFee
+  o String bFee
+  --> Trader owner
+}
+
+participant Trader identified by traderId {
+  o String traderId
+  o String traderName
+}
+
+transaction Recon {
+  --> Ledger ledger
+  --> Trader newOwner
+}
